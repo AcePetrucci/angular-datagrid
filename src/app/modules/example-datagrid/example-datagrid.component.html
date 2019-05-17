@@ -1,0 +1,13 @@
+<app-datagrid *ngIf="exampleDatagridList$ | async as exampleDatagridList" [datasource]="exampleDatagridList">
+  <app-datagrid-body *ngFor="let datasourceContent of exampleDatagridList.content">
+    <ng-container *ngFor="let content of datasourceContent">
+      <app-datagrid-cell *ngIf="content.visible" [content]="content">
+
+        <ng-container *ngIf="content.name === 'actions'">
+          <button> Action </button>
+        </ng-container>
+
+      </app-datagrid-cell>
+    </ng-container>
+  </app-datagrid-body>
+</app-datagrid>

@@ -1,0 +1,30 @@
+<div class="table">
+  <header class="header">
+    <ng-container *ngFor="let header of clonedDatasource.header">
+      <div
+        class="item"
+        *ngIf="header.visible || header.visible === undefined"
+        [ngStyle]="{'flex': header.size}"
+        [ngClass]="{
+          '-left': header.left,
+          '-no-border': header.noBorder
+        }"
+      >
+        <i
+          class="icon"
+          *ngIf="header.toggle"
+          (click)="toggleColumns(header)"
+          [ngClass]="{
+            'icon-trocar-baixo': header.toggleType === 'down',
+            'icon-trocar-cima': header.toggleType === 'up'
+          }"
+        ></i>
+        <span> {{ header.title }} </span>
+      </div>
+    </ng-container>
+  </header>
+
+  <section class="body">
+    <ng-content></ng-content>
+  </section>
+</div>
