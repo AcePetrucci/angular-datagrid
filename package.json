@@ -1,6 +1,6 @@
 {
-  "name": "angular-datagrid-p-version",
-  "version": "1.0.0",
+  "name": "ngx-ace-datagrid",
+  "version": "0.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
