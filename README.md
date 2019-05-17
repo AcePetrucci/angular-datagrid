@@ -1,1 +1,1 @@
-# Angular Datagrid - (P Version)
+# Ace Datagrid (Angular)
