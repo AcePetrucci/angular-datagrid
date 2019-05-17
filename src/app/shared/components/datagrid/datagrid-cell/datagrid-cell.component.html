@@ -1,31 +1,29 @@
-<ng-container *ngIf="content.visible || content.visible === undefined">
-  <span *ngIf="!content.customRender">
-    <ng-container *ngIf="content.type === 'text'">
-      {{ content.content }}
-    </ng-container>
+<span *ngIf="!content.customRender">
+  <ng-container *ngIf="content.type === 'text'">
+    {{ content.content }}
+  </ng-container>
 
-    <ng-container *ngIf="content.type === 'number'">
-      {{ content.content | number }}
-    </ng-container>
+  <ng-container *ngIf="content.type === 'number'">
+    {{ content.content | number }}
+  </ng-container>
 
-    <ng-container *ngIf="content.type === 'percentage'">
-      {{ content.content | number }}%
-    </ng-container>
+  <ng-container *ngIf="content.type === 'percentage'">
+    {{ content.content | number }}%
+  </ng-container>
 
-    <ng-container *ngIf="content.type === 'date'">
-      {{ content.content | date:'MM/dd/yyyy' }}
-    </ng-container>
+  <ng-container *ngIf="content.type === 'date'">
+    {{ content.content | date:'MM/dd/yyyy' }}
+  </ng-container>
 
-    <ng-container *ngIf="content.type === 'currency'">
-      {{ content.content | currency }}
-    </ng-container>
+  <ng-container *ngIf="content.type === 'currency'">
+    {{ content.content | currency }}
+  </ng-container>
 
-    <ng-container *ngIf="content.type === 'others'">
-      <ng-content></ng-content>
-    </ng-container>
-  </span>
-
-  <ng-container *ngIf="content.customRender">
+  <ng-container *ngIf="content.type === 'others'">
     <ng-content></ng-content>
   </ng-container>
+</span>
+
+<ng-container *ngIf="content.customRender">
+  <ng-content></ng-content>
 </ng-container>

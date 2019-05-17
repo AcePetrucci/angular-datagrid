@@ -13,6 +13,7 @@ export const addHeaders = (columns) => {
       toggleTargets: column.toggleTargets || [],
       visible: column.visible === undefined ? true : column.visible,
       noBorder: column.noBorder || false,
+      customRender: column.customRender || false,
     };
 
     headers.push(currentHeader);

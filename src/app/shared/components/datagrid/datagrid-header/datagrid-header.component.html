@@ -1,0 +1,15 @@
+<ng-container *ngIf="!header.customRender" >
+  <i
+    class="icon"
+    *ngIf="header.toggle"
+    [ngClass]="{
+      'icon-trocar-baixo': header.toggleType === 'down',
+      'icon-trocar-cima': header.toggleType === 'up'
+    }"
+  ></i>
+  <span> {{ header.title }} </span>
+</ng-container>
+
+<ng-container *ngIf="header.customRender">
+  <ng-content></ng-content>
+</ng-container>

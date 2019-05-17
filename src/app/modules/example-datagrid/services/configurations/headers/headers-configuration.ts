@@ -57,7 +57,8 @@ export const defaultHeadersAndColumns = (length) => {
       name: 'sixthCell',
       title: 'sixthCell',
       type: 'number',
-      size: 1.5
+      size: 1.5,
+      customRender: true,
     },
     {
       name: 'seventhCell',

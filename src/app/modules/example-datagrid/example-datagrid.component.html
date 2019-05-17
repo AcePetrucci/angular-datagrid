@@ -1,6 +1,19 @@
-<app-datagrid *ngIf="exampleDatagridList$ | async as exampleDatagridList" [datasource]="exampleDatagridList">
+<app-datagrid *ngIf="exampleDatagridList$ | async as exampleDatagridList">
+  <ng-container *ngFor="let header of exampleDatagridList.header">
+    <!-- Datagrid Header -->
+    <app-datagrid-header *ngIf="header.visible" [header]="header">
+
+      <ng-container *ngIf="header.name === 'sixthCell'">
+        Sixth Cell
+      </ng-container>
+
+    </app-datagrid-header>
+    <!-- End of Datagrid Header -->
+  </ng-container>
+
   <app-datagrid-body *ngFor="let datasourceContent of exampleDatagridList.content">
     <ng-container *ngFor="let content of datasourceContent">
+      <!-- Datagrid Content -->
       <app-datagrid-cell *ngIf="content.visible" [content]="content">
 
         <ng-container *ngIf="content.name === 'actions'">
@@ -8,6 +21,7 @@
         </ng-container>
 
       </app-datagrid-cell>
+      <!-- End of Datagrid Content -->
     </ng-container>
   </app-datagrid-body>
 </app-datagrid>

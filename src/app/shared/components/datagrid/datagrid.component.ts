@@ -11,31 +11,31 @@ import { Datagrid } from 'src/app/shared/models/datagrid.model';
 })
 export class DatagridComponent {
 
-  @OnChange(function() {
-    this.clonedDatasource = { ...this.datasource };
-  })
-  @Input() datasource: Datagrid;
+  // @OnChange(function() {
+  //   this.clonedDatasource = { ...this.datasource };
+  // })
+  // @Input() datasource: Datagrid;
 
-  clonedDatasource: Datagrid;
+  // clonedDatasource: Datagrid;
 
   constructor() { }
 
-  toggleColumns(header) {
-    header.toggleTargets.map(target => {
-      const foundHeader = this.clonedDatasource.header.find(column => column.name === target)
-      foundHeader.visible = !foundHeader.visible;
+  // toggleColumns(header) {
+  //   header.toggleTargets.map(target => {
+  //     const foundHeader = this.clonedDatasource.header.find(column => column.name === target)
+  //     foundHeader.visible = !foundHeader.visible;
 
-      this.clonedDatasource.content.map(column => {
-        const rightCol = column.find(col => col.name === target);
-        rightCol.visible = !rightCol.visible;
-      })
-    })
+  //     this.clonedDatasource.content.map(column => {
+  //       const rightCol = column.find(col => col.name === target);
+  //       rightCol.visible = !rightCol.visible;
+  //     })
+  //   })
 
-    header.visible = !header.visible;
-    this.clonedDatasource.content.map(column => {
-      const rightCol = column.find(col => col.name === header.name);
-      rightCol.visible = !rightCol.visible;
-    })
-  }
+  //   header.visible = !header.visible;
+  //   this.clonedDatasource.content.map(column => {
+  //     const rightCol = column.find(col => col.name === header.name);
+  //     rightCol.visible = !rightCol.visible;
+  //   })
+  // }
 
 }

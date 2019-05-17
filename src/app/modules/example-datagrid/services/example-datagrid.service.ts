@@ -22,7 +22,8 @@ export class ExampleDatagridService {
         dataToExtract,
         customRenders,
         addHeaders(defaultHeadersAndColumns(datagridData.length)),
-      ))
+      )),
+      tap(console.log)
     );
   }
 }

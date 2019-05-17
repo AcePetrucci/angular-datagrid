@@ -1,0 +1,66 @@
+:host
+  font-size 12px
+  font-weight 700
+  letter-spacing 0.4px
+  flex 1
+  text-align center
+  position relative
+
+  &.-left
+    text-align left
+    padding-left 36px
+
+    & > i
+      transform translateY(-3px) translateX(12px)
+
+    & > span
+      transform translateX(-6px)
+      display inline-block
+
+  &:last-child
+    &::after
+    display none
+
+    & > span::after
+      display none
+
+  &::after
+    content ''
+    position absolute
+    top -19px
+    bottom 0
+    right 0
+    width 2px
+    height 50px
+    background-color #3d3f42
+    border-right 1px solid #8c8c8c
+
+  &.-no-border
+    &::after
+      display none
+
+  & > i
+    position absolute
+    left 0
+    transform translateY(-3px) translateX(6px)
+    cursor pointer
+    font-size 17px
+
+    & + span
+      position relative
+      left 6px
+
+  & > span
+    cursor pointer
+    position relative
+
+    &.-upwards
+      transform rotate(180deg)
+
+    &::after
+      content ''
+      border-left 4px solid transparent
+      border-right 4px solid transparent
+      border-top 8px solid #fff
+      margin-left 0
+      display inline-block
